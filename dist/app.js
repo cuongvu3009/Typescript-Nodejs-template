@@ -30,7 +30,7 @@ var App = /** @class */ (function () {
     App.prototype.initialiseControllers = function (controllers) {
         var _this = this;
         controllers.forEach(function (controller) {
-            _this.express.use('/api', controller.router);
+            _this.express.use('/api/v1', controller.router);
         });
     };
     App.prototype.initialiseErrorHandling = function () {
@@ -38,7 +38,7 @@ var App = /** @class */ (function () {
     };
     App.prototype.initialiseDatabaseConnection = function () {
         var _a = process.env, MONGO_USER = _a.MONGO_USER, MONGO_PASSWORD = _a.MONGO_PASSWORD, MONGO_PATH = _a.MONGO_PATH;
-        mongoose_1.default.connect("mongodb://".concat(MONGO_USER, ":").concat(MONGO_PASSWORD).concat(MONGO_PATH));
+        mongoose_1.default.connect("mongodb+srv://".concat(MONGO_USER, ":").concat(MONGO_PASSWORD).concat(MONGO_PATH));
     };
     App.prototype.listen = function () {
         var _this = this;

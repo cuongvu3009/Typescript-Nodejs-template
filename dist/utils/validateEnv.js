@@ -10,6 +10,7 @@ function validateEnv() {
         MONGO_PATH: (0, envalid_1.str)(),
         MONGO_USER: (0, envalid_1.str)(),
         PORT: (0, envalid_1.port)({ default: 8080 }),
+        JWT_SECRET: (0, envalid_1.str)(),
     });
 }
 exports.default = validateEnv;

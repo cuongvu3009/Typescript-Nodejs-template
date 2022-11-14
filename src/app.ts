@@ -32,7 +32,7 @@ class App {
 
     private initialiseControllers(controllers: Controller[]): void {
         controllers.forEach((controller: Controller) => {
-            this.express.use('/api', controller.router);
+            this.express.use('/api/v1', controller.router);
         });
     }
 
@@ -44,7 +44,7 @@ class App {
         const { MONGO_USER, MONGO_PASSWORD, MONGO_PATH } = process.env;
 
         mongoose.connect(
-            `mongodb://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
+            `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}${MONGO_PATH}`
         );
     }
 
